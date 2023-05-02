@@ -770,7 +770,10 @@ class BotToast {
     assert(enableKeyboardSafeArea != null);
 
     //由于cancelFunc一开始是为空的,所以在赋值之前需要在闭包里使用
-    late final CancelFunc cancelFunc;
+     CancelFunc cancelFunc = (){};
+
+
+
     final CancelFunc dismissFunc = () async {
       await closeFunc?.call();
       cancelFunc();
